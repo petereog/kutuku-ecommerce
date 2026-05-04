@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'signup.dart';
 
 
 class Login extends StatefulWidget {
@@ -56,7 +57,7 @@ class _LoginState extends State<Login> {
               'Login',
               style: TextStyle(
                 fontFamily: 'Poppins',
-                fontSize: 28,
+                fontSize: 30,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
@@ -299,25 +300,33 @@ class _LoginState extends State<Login> {
 
     // ── Sign Up ──
     Center(
-    child: RichText(
-    text: const TextSpan(
-    text: "Don't have an account? ",
-    style: TextStyle(
-    fontFamily: 'Poppins',
-    color: Colors.grey,
-    fontSize: 13,
-    ),
-    children: [
-    TextSpan(
-    text: 'Sign Up',
-    style: TextStyle(
-    color: Color(0xFFFF6B57),
-    fontWeight: FontWeight.w600,
-    ),
+    child: InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const Signup()),
+        );
+      },
+      child: RichText(
+      text: const TextSpan(
+      text: "Don't have an account? ",
+      style: TextStyle(
+      fontFamily: 'Poppins',
+      color: Colors.grey,
+      fontSize: 13,
+      ),
+      children: [
+          TextSpan(
+            text: 'Sign Up',
+                    style: TextStyle(
+                        color: Color(0xFFFF6B57),
+                            fontWeight: FontWeight.w600,
+                        ),
+      )
+      ],
+      ),
+      ),
     )
-    ],
-    ),
-    ),
     ),
       ]
 
