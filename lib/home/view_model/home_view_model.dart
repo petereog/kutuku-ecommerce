@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import '../model/category_model.dart';
-import '../model/offer_model.dart';
-import '../model/restaurant_model.dart';
+import 'package:kutuku/home/model/category_model.dart';
+import 'package:kutuku/home/model/offer_model.dart';
+import 'package:kutuku/home/model/restaurant_model.dart';
 
 class HomeViewModel extends ChangeNotifier {
-  int _selectedCategoryIndex = 2; // Pizza selected by default
+  int _selectedCategoryIndex = 2;
   int _selectedNavIndex = 0;
 
   int get selectedCategoryIndex => _selectedCategoryIndex;
   int get selectedNavIndex => _selectedNavIndex;
 
   final List<CategoryModel> _categories = [
-    CategoryModel(name: 'Burger', emoji: '🍔'),
-    CategoryModel(name: 'Donuts', emoji: '🍩'),
-    CategoryModel(name: 'Pizza', emoji: '🍕'),
-    CategoryModel(name: 'Hot Dog', emoji: '🌭'),
-    CategoryModel(name: 'Pasta', emoji: '🍝'),
+    CategoryModel(name: 'Burger', image: 'assets/images/Fresh beef burger isolated -1 1.png'),
+    CategoryModel(name: 'Donuts', image: 'assets/images/donut.png'),
+    CategoryModel(name: 'Pizza', image: 'assets/images/17929 1.png'),
+    CategoryModel(name: 'Hot Dog', image: 'assets/images/35106 1.png'),
+    CategoryModel(name: 'Pasta', image: 'assets/images/wepik-export-20231123125826rxSl 1.png'),
   ];
 
   List<CategoryModel> get categories => _categories;
@@ -27,7 +27,7 @@ class HomeViewModel extends ChangeNotifier {
       delivery: 'Free delivery',
       price: 22.00,
       color: const Color(0xFFFF6B6B),
-      emoji: '🍔',
+      image: 'assets/images/Fresh beef burger isolated -1 2.png',
     ),
     OfferModel(
       name: 'Pizza Palace',
@@ -35,7 +35,7 @@ class HomeViewModel extends ChangeNotifier {
       delivery: 'Free delivery',
       price: 18.00,
       color: const Color(0xFF4ECDC4),
-      emoji: '🍕',
+      image: 'assets/images/17929 1.png',
     ),
   ];
 
@@ -47,7 +47,7 @@ class HomeViewModel extends ChangeNotifier {
       rating: 4.5,
       time: '45 mins',
       delivery: 'Free delivery',
-      emoji: '🍣',
+      image: 'assets/images/Mask Group.png',
       bg: const Color(0xFF1C2B3A),
     ),
     RestaurantModel(
@@ -55,7 +55,7 @@ class HomeViewModel extends ChangeNotifier {
       rating: 4.3,
       time: '30 mins',
       delivery: 'Free delivery',
-      emoji: '🦐',
+      image: 'assets/images/35106 1.png',
       bg: const Color(0xFF3B2314),
     ),
     RestaurantModel(
@@ -63,7 +63,7 @@ class HomeViewModel extends ChangeNotifier {
       rating: 4.6,
       time: '25 mins',
       delivery: '\$1.99 delivery',
-      emoji: '🍔',
+      image: 'assets/images/Fresh beef burger isolated -1 1 (1).png',
       bg: const Color(0xFF1A3A1A),
     ),
     RestaurantModel(
@@ -71,7 +71,7 @@ class HomeViewModel extends ChangeNotifier {
       rating: 4.4,
       time: '35 mins',
       delivery: 'Free delivery',
-      emoji: '🌮',
+      image: 'assets/images/wepik-export-20231123125826rxSl 1.png',
       bg: const Color(0xFF3A1A2A),
     ),
   ];

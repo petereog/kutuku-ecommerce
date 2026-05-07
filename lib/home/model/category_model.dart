@@ -1,9 +1,9 @@
 class CategoryModel {
   final String name;
-  final String emoji;
+  final String image;
 
   CategoryModel({
     required this.name,
-    required this.emoji,
+    required this.image,
   });
 }

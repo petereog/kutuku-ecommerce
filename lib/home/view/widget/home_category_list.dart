@@ -41,7 +41,7 @@ class HomeCategoryList extends StatelessWidget {
                           boxShadow: selected
                               ? [
                                   BoxShadow(
-                                    color: const Color(0xFF4ECDC4).withOpacity(0.4),
+                                    color: const Color(0xFF4ECDC4).withValues(alpha: 0.4),
                                     blurRadius: 14,
                                     offset: const Offset(0, 4),
                                   ),
@@ -49,9 +49,11 @@ class HomeCategoryList extends StatelessWidget {
                               : [],
                         ),
                         child: Center(
-                          child: Text(
-                            cat.emoji,
-                            style: TextStyle(fontSize: selected ? 30 : 26),
+                          child: Image.asset(
+                            cat.image,
+                            width: selected ? 42 : 36,
+                            height: selected ? 42 : 36,
+                            fit: BoxFit.contain,
                           ),
                         ),
                       ),

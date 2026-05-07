@@ -27,10 +27,15 @@ class HomeSpecialOffers extends StatelessWidget {
                 margin: const EdgeInsets.only(right: 14),
                 decoration: BoxDecoration(
                   color: bgColor,
+                  image: const DecorationImage(
+                    image: AssetImage('assets/images/BG Asset.png'),
+                    fit: BoxFit.cover,
+                    opacity: 0.2,
+                  ),
                   borderRadius: BorderRadius.circular(22),
                   boxShadow: [
                     BoxShadow(
-                      color: bgColor.withOpacity(0.38),
+                      color: bgColor.withValues(alpha: 0.38),
                       blurRadius: 18,
                       offset: const Offset(0, 6),
                     ),
@@ -47,7 +52,7 @@ class HomeSpecialOffers extends StatelessWidget {
                         width: 110,
                         height: 110,
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.1),
+                          color: Colors.white.withValues(alpha: 0.1),
                           shape: BoxShape.circle,
                         ),
                       ),
@@ -59,21 +64,23 @@ class HomeSpecialOffers extends StatelessWidget {
                         width: 80,
                         height: 80,
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.07),
+                          color: Colors.white.withValues(alpha: 0.07),
                           shape: BoxShape.circle,
                         ),
                       ),
                     ),
 
-                    // Food emoji
+                    // Food image
                     Positioned(
-                      right: 10,
+                      right: -10,
                       top: 0,
                       bottom: 0,
                       child: Center(
-                        child: Text(
-                          offer.emoji,
-                          style: const TextStyle(fontSize: 70),
+                        child: Image.asset(
+                          offer.image,
+                          width: 150,
+                          height: 150,
+                          fit: BoxFit.contain,
                         ),
                       ),
                     ),

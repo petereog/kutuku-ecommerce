@@ -9,12 +9,33 @@ class HomeRestaurantGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<HomeViewModel>(
-      builder: (context, viewModel, child) {
+    // Senior Tip: Use Selector instead of Consumer to limit rebuilds to only when
+    // the restaurants list changes. This prevents rebuilds when other unrelated
+    // data in HomeViewModel changes (e.g., selectedCategoryIndex).
+    return Selector<HomeViewModel, List<RestaurantModel>>(
+      selector: (_, viewModel) => viewModel.restaurants,
+      builder: (context, restaurants, _) {
+        // Handle empty state gracefully
+        if (restaurants.isEmpty) {
+          return const Center(
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 32),
+              child: Text(
+                'No restaurants available',
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontFamily: 'Poppins',
+                  fontSize: 14,
+                ),
+              ),
+            ),
+          );
+        }
+
         return GridView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
-          itemCount: viewModel.restaurants.length,
+          itemCount: restaurants.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 14,
@@ -22,8 +43,7 @@ class HomeRestaurantGrid extends StatelessWidget {
             childAspectRatio: 0.80,
           ),
           itemBuilder: (context, index) {
-            final RestaurantModel restaurant = viewModel.restaurants[index];
-            return HomeRestaurantCard(restaurant: restaurant);
+            return HomeRestaurantCard(restaurant: restaurants[index]);
           },
         );
       },

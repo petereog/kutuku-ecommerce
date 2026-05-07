@@ -6,7 +6,7 @@ class OfferModel {
   final String delivery;
   final double price;
   final Color color;
-  final String emoji;
+  final String image;
 
   OfferModel({
     required this.name,
@@ -14,6 +14,6 @@ class OfferModel {
     required this.delivery,
     required this.price,
     required this.color,
-    required this.emoji,
+    required this.image,
   });
 }

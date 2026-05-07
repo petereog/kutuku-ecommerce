@@ -23,7 +23,7 @@ class HomeBottomNav extends StatelessWidget {
             color: const Color(0xFF1A1A2E),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.18),
+                color: Colors.black.withValues(alpha: 0.18),
                 blurRadius: 20,
                 offset: const Offset(0, -4),
               ),
@@ -42,7 +42,7 @@ class HomeBottomNav extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 8),
                   decoration: BoxDecoration(
                     color: selected
-                        ? const Color(0xFFFF6B35).withOpacity(0.15)
+                        ? const Color(0xFFFF6B35).withValues(alpha: 0.15)
                         : Colors.transparent,
                     borderRadius: BorderRadius.circular(14),
                   ),

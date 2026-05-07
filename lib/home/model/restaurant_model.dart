@@ -5,7 +5,7 @@ class RestaurantModel {
   final double rating;
   final String time;
   final String delivery;
-  final String emoji;
+  final String image;
   final Color bg;
 
   RestaurantModel({
@@ -13,7 +13,7 @@ class RestaurantModel {
     required this.rating,
     required this.time,
     required this.delivery,
-    required this.emoji,
+    required this.image,
     required this.bg,
   });
 }
